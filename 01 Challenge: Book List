@@ -1,0 +1,16 @@
+/*Challenge 1: Book list database
+
+Step 1
+Create a table to store a list of books. 
+
+It should have columns for id, name, and rating. 
+
+Add three of your favorite books into the table.
+*/
+
+CREATE TABLE book_list (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
+
+INSERT INTO book_list VALUES (1, "More Than a Carpenter", 5);
+INSERT INTO book_list VALUES (2, "Victory Over the Darkness",5);
+INSERT INTO book_list VALUES (3, "Myth of the entrepreneur",4);
+SELECT* FROM book_list;
