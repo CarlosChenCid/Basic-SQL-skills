@@ -1,0 +1,28 @@
+/** Project 2: Design a shop database
+
+Create your own shop! Your shop should sell only one type of thing, like clothes or bicycles, 
+whatever you want your shop to specialise in. You should have one table for all the items in 
+your shop, and at least 5 columns for the types of data you need to store. You should sell at 
+least 15 items, use select statements to sort your items by price, and display at least one 
+statistic about the items.
+**/
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, cloth TEXT, color TEXT, brand TEXT, price INTEGER);
+
+INSERT INTO store VALUES (1,"Cat Tshirt","Black","MichiPet",15.99);
+INSERT INTO store VALUES (2,"Cat Tshirt","White","MichiPet",15.99);
+INSERT INTO store VALUES (3,"Cat Tshirt","Red","MichiPet",15.99);
+INSERT INTO store VALUES (4,"Dog Tshirt","White","DoggoPet",15.99);
+INSERT INTO store VALUES (5,"Dog Tshirt","Black","DoggoPet",15.99);
+INSERT INTO store VALUES (6,"Super hero belt","black","Hero",25.99);
+INSERT INTO store VALUES (7,"Villain belt","black","hero",25.99);
+INSERT INTO store VALUES (8,"Villain belt","brown","hero",25.99);
+INSERT INTO store VALUES (9,"Hero belt","brown","hero",25.99);
+INSERT INTO store VALUES (10,"Sidekick costume","Gray","hero",32.99);
+INSERT INTO store VALUES (11,"Power ranger mask","Red","Hasbro",9.99);
+INSERT INTO store VALUES (12,"Power ranger mask","Pink","Hasbro",9.99);
+INSERT INTO store VALUES (13,"Power ranger mask","Yellow","Hasbro",9.99);
+INSERT INTO store VALUES (14,"Power ranger mask","Blue","Hasbro",9.99);
+INSERT INTO store VALUES (15,"Power ranger mask","Black","Hasbro",9.99);
+
+SELECT*, SUM(price) FROM store GROUP BY cloth;
