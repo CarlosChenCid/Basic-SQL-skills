@@ -1,8 +1,8 @@
-/**Challenge 4
+/*Challenge 4
 
 Select karaoke songs We have a created table of songs, and in this challenge 
 you will use queries to decide which songs to sing. For the first step, 
-select all the song titles.**/
+select all the song titles.*/
 
 CREATE TABLE songs (
     id INTEGER PRIMARY KEY,
@@ -32,15 +32,15 @@ INSERT INTO songs (title, artist, mood, duration, released)
     SELECT title FROM songs;
     SELECT* FROM songs WHERE title="epic";
     
-    /**Select all the song titles.**/
+    /*Select all the song titles.*/
 
 SELECT title FROM songs;
 
- /**Show the titles of the songs that have an 'epic' mood or a release date after 1990.**/
+ /*Show the titles of the songs that have an 'epic' mood or a release date after 1990.*/
 
  SELECT title FROM songs WHERE mood = "epic" OR released > 1990;
 
-/**Show the titles of songs that are 'epic', and released after 1990, and less than 4 minutes long.
-Note that the duration column is measured in seconds.**/
+/*Show the titles of songs that are 'epic', and released after 1990, and less than 4 minutes long.
+Note that the duration column is measured in seconds.*/
 
  SELECT title FROM songs WHERE mood = "epic" AND released > 1990 AND duration < 240;
