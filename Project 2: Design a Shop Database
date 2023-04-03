@@ -1,11 +1,11 @@
-/** Project 2: Design a shop database
+/* Project 2: Design a shop database
 
 Create your own shop! Your shop should sell only one type of thing, like clothes or bicycles, 
 whatever you want your shop to specialise in. You should have one table for all the items in 
 your shop, and at least 5 columns for the types of data you need to store. You should sell at 
 least 15 items, use select statements to sort your items by price, and display at least one 
 statistic about the items.
-**/
+*/
 
 CREATE TABLE store (id INTEGER PRIMARY KEY, cloth TEXT, color TEXT, brand TEXT, price INTEGER);
 
@@ -25,4 +25,4 @@ INSERT INTO store VALUES (13,"Power ranger mask","Yellow","Hasbro",9.99);
 INSERT INTO store VALUES (14,"Power ranger mask","Blue","Hasbro",9.99);
 INSERT INTO store VALUES (15,"Power ranger mask","Black","Hasbro",9.99);
 
-SELECT*, SUM(price) FROM store GROUP BY cloth;
+SELECT *, SUM(price) FROM store GROUP BY cloth;
