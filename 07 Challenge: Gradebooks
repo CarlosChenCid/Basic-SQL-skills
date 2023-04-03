@@ -1,11 +1,11 @@
-/** Challenge 7:
+/* Challenge 7:
 We create a database to keep track of students' grades, with their name,
 number grade and what percentage of activities they have completed.
 
 In this first step, select all rows and display name, number_grade and
 percent_completed, which you can calculate by multiplying and rounding
 the fraction_completed column.
-**/
+*/
 
 CREATE TABLE student_grades (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -26,20 +26,20 @@ INSERT INTO student_grades (name, number_grade, fraction_completed)
 INSERT INTO student_grades (name, number_grade, fraction_completed)
     VALUES ("Winstonia", 82, 0.9045);
     
-/** Select all of the rows, and display the name, number_grade, and percent_completed, 
+/* Select all of the rows, and display the name, number_grade, and percent_completed, 
 which you can compute by multiplying and rounding the fraction_completed column.
-**/
+*/
 
 SELECT name, number_grade, ROUND (fraction_completed * 100) AS percent_completed FROM student_grades;
 
-/** The goal is a table that shows how many students have earned which letter_grade. 
+/* The goal is a table that shows how many students have earned which letter_grade. 
 You can output the letter_grade by using CASE with the number_grade column, outputting 
 'A' for grades > 90, 
 'B' for grades > 80, 
 'C' for grades > 70, 
 and 'F' otherwise. 
 Then you can use COUNT with GROUP BY to show the number of students with each of those grades.
-**/
+*/
 
 SELECT COUNT(*) as Number_of_Student, 
     CASE 
