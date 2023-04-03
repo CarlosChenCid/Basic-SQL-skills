@@ -1,11 +1,11 @@
-/** Challenge 6:
+/* Challenge 6:
 
 We create a database of some popular authors and their books,
 with the word count of each book. In this first step, select
 all authors who have written more than 1 million words, using
 GROUP BY and HAVING. Your results table should include the
 'author' and the total word count as a 'total_words' column.
-**/
+*/
 
 CREATE TABLE books (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,20 +47,20 @@ INSERT INTO books (author, title, words)
     VALUES ("J.R.R. Tolkien", "Return of the King", 134462);
  
 
-/**select all the authors who have written more 
+/*select all the authors who have written more 
 than 1 million words, using GROUP BY and HAVING. 
 
 Your results table should include the 'author'
-and their total word count as a 'total_words' column.**/
+and their total word count as a 'total_words' column.*/
 
 SELECT author, SUM(words) AS total_words 
 FROM books GROUP BY author 
 HAVING total_words > 1000000;
 
- /**Select all the authors that write more
+ /*Select all the authors that write more
  than an average of 150,000 words per book. 
 Your results table should include the 'author'
-and average words as an 'avg_words' column.**/
+and average words as an 'avg_words' column.*/
 
  SELECT author, AVG(words) AS avg_words 
  FROM books 
