@@ -1,7 +1,7 @@
-/** Challenge 5
+/* Challenge 5
 
 We've created a database of songs and artists, and you'll make playlists 
-from them in this challenge. **/
+from them in this challenge. */
 
 CREATE TABLE artists (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -63,16 +63,16 @@ INSERT INTO songs (artist, title)
     VALUES ("Guns N' Roses", "Don't cry");
     
 
-/**Select the title of all the songs by the artist named 'Queen'.**/
+/*Select the title of all the songs by the artist named 'Queen'.*/
 
 SELECT title FROM songs WHERE artist = "Queen";
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-/**Select the name of all of the artists from the 'Pop' genre.**/
+/*Select the name of all of the artists from the 'Pop' genre.*/
 
 Select name FROM artists WHERE genre = "Pop";
 
-/**Select the title of all the songs from the 'Pop' artists. It should 
-use IN on a nested subquery that's based on your previous query.**/
+/*Select the title of all the songs from the 'Pop' artists. It should 
+use IN on a nested subquery that's based on your previous query.*/
 
 SELECT title FROM songs 
 WHERE artist IN (SELECT name FROM artists WHERE genre="Pop")
