@@ -124,3 +124,22 @@ INSERT INTO sales(transaction_date,product,price,payment_type,name,city,state,co
 INSERT INTO sales(transaction_date,product,price,payment_type,name,city,state,country,account_created,last_login,latitude,longitude) VALUES ('1/14/09 11:19','Chair',1200,'Visa','Jennifer','Jumeira','Dubayy','United Arab Emirates','1/14/09 10:44','1/14/09 21:26',25.2097222,55.2477778);
 INSERT INTO sales(transaction_date,product,price,payment_type,name,city,state,country,account_created,last_login,latitude,longitude) VALUES ('1/13/09 19:39','Chair',1200,'Visa','Jolene','Englewood','CO','United states','1/6/09 22:00','1/14/09 22:02',39.64778,-104.98722);
 
+/* Result of the query on total sales per product */
+SELECT product, SUM(price) as total_sold
+FROM sales GROUP by product;
+
+/* Result of the query on total products sold */
+SELECT product, COUNT(product) as total_products
+FROM sales GROUP by product;
+
+/*  Sales query by credit card type */
+SELECT payment_type, COUNT(payment_type) as credit_sales FROM sales GROUP BY payment_type;
+
+/*  Sales query by country */
+SELECT country, COUNT (country) as total_country
+FROM sales GROUP by country;
+
+/*  top selling countries query */
+SELECT country, COUNT (country) as total_country
+FROM sales GROUP by country
+HAVING total_country>5;
